@@ -3,22 +3,22 @@
 public partial class MainPage : ContentPage
 {
     IDispatcherTimer timer;
-	Simulation simulation;
+    Simulation simulation;
 
     public MainPage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
         simulation = Resources["simulation"] as Simulation;
 
         timer = Dispatcher.CreateTimer();
         timer.Interval = TimeSpan.FromMilliseconds(500);
-		timer.Tick += this.OnTimeEvent;
-		timer.Start();
+        timer.Tick += this.OnTimeEvent;
+        timer.Start();
     }
 
-	private void OnTimeEvent(object source, EventArgs e)
-	{
+    private void OnTimeEvent(object source, EventArgs e)
+    {
         simulation.Update();
         graphics.Invalidate();
     }

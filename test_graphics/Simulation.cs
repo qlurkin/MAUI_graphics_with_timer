@@ -2,11 +2,11 @@
 
 namespace test_graphics
 {
-	public class Simulation : IDrawable
-	{
+    public class Simulation : IDrawable
+    {
         List<SimulationObject> objects;
-		public Simulation()
-		{
+        public Simulation()
+        {
             objects = new List<SimulationObject>();
 
             objects.Add(new Animal(100, 100));
